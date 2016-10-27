@@ -10,7 +10,9 @@
 // @include     http://www.geocaching.com/my/statistics.aspx
 // @include     https://www.geocaching.com/bookmarks/*
 // @include     http://www.geocaching.com/bookmarks/*
-// @version     1.2
+// @exclude     https://www.geocaching.com/bookmarks/
+// @exclude     http://www.geocaching.com/bookmarks/
+// @version     1.3
 // @require		https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js
 // @grant       none
 // @grant		GM_xmlhttpRequest
