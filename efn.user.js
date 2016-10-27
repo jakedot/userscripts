@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Extended Field Notes
-// @description	Makes field notes usable in other places: shows already found caches from there in your statistics, and changes the display of caches in bookmark lists as if they were already logged as found.
-// @author		Jakob Mayer <mail@jakobmayer.at>
+// @description Makes field notes usable in other places: shows already found caches from there in your statistics, and changes the display of caches in bookmark lists as if they were already logged as found.
+// @author      Jakob Mayer <mail@jakobmayer.at>
 // @namespace   https://github.com/jakedot/userscripts/
 // @updateURL   https://raw.githubusercontent.com/jakedot/userscripts/master/efn.meta.js
 // @downloadURL https://raw.githubusercontent.com/jakedot/userscripts/master/efn.user.js
@@ -12,17 +12,17 @@
 // @include     http://www.geocaching.com/bookmarks/*
 // @exclude     https://www.geocaching.com/bookmarks/
 // @exclude     http://www.geocaching.com/bookmarks/
-// @version     1.3
-// @require		https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js
+// @version     1.4
+// @require     https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js
 // @grant       none
-// @grant		GM_xmlhttpRequest
+// @grant       GM_xmlhttpRequest
 // ==/UserScript==
 
 $(function(){
     console.log("extended field notes 1.2");
-    var	fieldnotes,
-		found = [],
-		dnf = [],
+    var fieldnotes,
+        found = [],
+        dnf = [],
         logRowSel = ".Table tbody tr",
         bmReg = /\/bookmarks\/.*\.aspx$/, bmCase,
         stReg = /\/statistics\.aspx$/, stCase,
@@ -137,13 +137,12 @@ $(function(){
                 if(isLogType("Found it", tr)) {
                     found.push(tr);
                 }
-				if (isLogType("Did not find",tr)) {
-					dnf.push(tr);
-				}
+                if (isLogType("Did not find",tr)) {
+                    dnf.push(tr);
+                }
             });
 
             handle(path);
         });
-
     }
 });
